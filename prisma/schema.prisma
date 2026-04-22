@@ -1,13 +1,40 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
-  output   = "../lib/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model Staff {
+  id           String      @id @default(uuid())
+  firstName    String
+  lastName     String
+  role         String
+  department   String
+  email        String      @unique
+  phone        String
+  availability Availability @default(available)
+  createdAt    DateTime    @default(now())
+  savedBy      SavedStaff[]
+
+  @@map("staff")
+}
+
+model SavedStaff {
+  id        String   @id @default(uuid())
+  staffId   String
+  staff     Staff    @relation(fields: [staffId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([staffId])
+  @@map("saved_staff")
+}
+
+enum Availability {
+  available
+  busy
+  off_duty
+
+  @@map("availability")
 }
