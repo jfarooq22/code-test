@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: careview_db
+    environment:
+      POSTGRES_USER: careview
+      POSTGRES_PASSWORD: careview_password
+      POSTGRES_DB: careview
+    ports:
+      - "5432:5432"
+    volumes:
+      - careview_data:/var/lib/postgresql/data
+
+volumes:
+  careview_data:
