@@ -15,7 +15,7 @@ const availabilityConfig = {
         label: "Busy",
         className: "bg-amber-100 text-amber-800",
     },
-    "off-duty": {
+    "off_duty": {
         label: "Off Duty",
         className: "bg-gray-100 text-gray-600",
     },

@@ -8,7 +8,8 @@ export const staffMemberSchema = z.object({
     department: z.string(),
     email: z.email(),
     phone: z.string(),
-    availability: z.enum(["available", "busy", "off-duty"]),
+    availability: z.enum(["available", "busy", "off_duty"]),
+    createdAt: z.string().or(z.date()),
 })
 
 export const staffSearchResponseSchema = z.object({
@@ -17,6 +18,12 @@ export const staffSearchResponseSchema = z.object({
     query: z.string(),
 })
 
+export const savedStaffResponseSchema = z.object({
+    results: z.array(staffMemberSchema),
+    total: z.number(),
+})
+
 // These are derived from the schema — types can never drift from validation
 export type StaffMember = z.infer<typeof staffMemberSchema>
 export type StaffSearchResponse = z.infer<typeof staffSearchResponseSchema>
+export type SavedStaffResponse = z.infer<typeof savedStaffResponseSchema>
