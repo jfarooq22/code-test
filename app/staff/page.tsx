@@ -19,7 +19,8 @@ export default function StaffDirectoryPage() {
                 <div className="flex items-center gap-8">
                     <span className="text-[#8892a4] text-sm hover:text-white cursor-pointer transition-colors">Dashboard</span>
                     <span className="text-[#8892a4] text-sm hover:text-white cursor-pointer transition-colors">Patient Search</span>
-                    <span className="text-blue-400 text-sm font-medium border-b border-blue-400 pb-0.5">Staff Directory</span>
+                    <a href="/staff" className="text-blue-400 text-sm font-medium border-b border-blue-400 pb-0.5">Staff Directory</a>
+                    <a href="/saved-staff" className="text-[#8892a4] text-sm hover:text-white transition-colors">On-Call List</a>
                     <span className="text-[#8892a4] text-sm hover:text-white cursor-pointer transition-colors">Reports</span>
                 </div>
             </nav>
