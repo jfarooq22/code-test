@@ -7,6 +7,16 @@ A full stack staff directory search feature built for the CareView technical ass
 - Node.js
 - Docker Desktop
 
+## Environment Variables
+
+Copy `.env.example` to `.env` before running:
+
+```bash
+cp .env.example .env
+```
+
+The default values match the Docker setup and work out of the box.
+
 ## Getting Started
 
 **1. Start the database:**
