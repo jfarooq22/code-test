@@ -7,6 +7,8 @@ interface StaffGridProps {
     isLoading: boolean
     isError: boolean
     searchTerm: string
+    department: string
+    availability:string
 }
 
 // Loading skeleton for a single card
@@ -43,6 +45,8 @@ export function StaffGrid({
     isLoading,
     isError,
     searchTerm,
+    department,
+    availability
 }: StaffGridProps) {
 
     // Loading state
@@ -81,7 +85,7 @@ export function StaffGrid({
     }
 
     // Empty search state - nothing typed yet
-    if (searchTerm.length === 0) {
+    if (searchTerm.length === 0 && department.length === 0 && availability.length === 0) {
         return (
             <section aria-label="Staff search prompt">
                 <div className="flex flex-col items-center justify-center py-16 text-center">
