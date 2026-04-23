@@ -1,4 +1,5 @@
 import { StaffDirectoryClient } from "./StaffDirectoryClient"
+import { Nav } from "../../components/layout/Nav"
 
 export const metadata = {
     title: "Staff Directory | ER CareView",
@@ -9,21 +10,7 @@ export default function StaffDirectoryPage() {
     return (
         <main className="min-h-screen" style={{ backgroundColor: "#0d1117" }}>
             {/* Nav */}
-            <nav className="flex items-center justify-between px-8 py-4 border-b border-[#1e2d40]">
-                <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded bg-blue-500 flex items-center justify-center">
-                        <span className="text-white text-xs font-bold">C</span>
-                    </div>
-                    <span className="text-white font-semibold text-sm">CareView</span>
-                </div>
-                <div className="flex items-center gap-8">
-                    <span className="text-[#8892a4] text-sm hover:text-white cursor-pointer transition-colors">Dashboard</span>
-                    <span className="text-[#8892a4] text-sm hover:text-white cursor-pointer transition-colors">Patient Search</span>
-                    <a href="/staff" className="text-blue-400 text-sm font-medium border-b border-blue-400 pb-0.5">Staff Directory</a>
-                    <a href="/saved-staff" className="text-[#8892a4] text-sm hover:text-white transition-colors">On-Call List</a>
-                    <span className="text-[#8892a4] text-sm hover:text-white cursor-pointer transition-colors">Reports</span>
-                </div>
-            </nav>
+            <Nav />          
 
             {/* Content */}
             <div className="px-8 py-8 flex flex-col gap-6">
